@@ -17,6 +17,7 @@ from typing import List
 from langchain.schema import Document
 from langgraph.graph import END, StateGraph
 from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain.utilities.tavily_search import TavilySearchAPIWrapper
 
 from groq import Groq
 from langchain_groq import ChatGroq
@@ -119,7 +120,7 @@ prompt_rag_chain = PromptTemplate(
     Also, please add that your response is based on the user provided information, and it is essential to consult with Minerva University staffs.
     Finally, you must provide the VALID email address of a Minerva University staff member who can be contacted regarding the student's question. If you don't know the valid email address, encourage them to contact [info@minerva.edu](mailto:info@minerva.edu).
     PLEASE do not provide email address that is not included in the context I gave you.
-    
+
     </OBJECTIVE>
 
     <STYLE>
@@ -188,7 +189,8 @@ prompt_question_rewriter = PromptTemplate(
 question_rewriter = prompt_question_rewriter | llm | StrOutputParser()
 
 #*web search tool
-web_search_tool = TavilySearchResults(tavily_api_key=tavily_api_key)
+tavilySearchAPIWrapper = TavilySearchAPIWrapper(tavily_api_key=tavily_api_key)
+web_search_tool = TavilySearchResults(api_wrapper=tavilySearchAPIWrapper)
 
 
 ###*----LANGGRAPH----*###

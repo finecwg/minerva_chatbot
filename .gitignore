@@ -1,0 +1,17 @@
+# Vim
+*~
+*.sw[p_]
+
+# Database
+Data/
+pdf_output/
+
+# pycache
+Code/__pycache__/
+
+# environment variable
+.env
+
+# output logs
+nohup.out
+output_prior.log

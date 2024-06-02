@@ -2,7 +2,7 @@
 
 - Installing wkhtmltopdf for web scrapping (not essential)
 
-````bash
+```bash
 sudo apt-get update && sudo apt-get install wkhtmltopdf
 ```
 
@@ -10,7 +10,7 @@ sudo apt-get update && sudo apt-get install wkhtmltopdf
 
 ```python
 python3 -m pip install -U -r requirements.txt
-````
+```
 
 # Usage
 

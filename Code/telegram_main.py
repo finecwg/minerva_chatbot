@@ -1,4 +1,5 @@
-# telegram.py
+__author__ = 'finecwg'
+
 from chatting import MinervaQA
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
